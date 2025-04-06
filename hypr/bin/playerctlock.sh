@@ -62,6 +62,8 @@ case "$1" in
 		#copy the file in /tmp/hyprlock
 		curl "$url" -o /tmp/hyprlock/cover
 		echo "/tmp/hyprlock/cover"
+		#save the url
+		echo "$url" > /tmp/hyprlock/url
 	#this looks weird but I need it like this to update the cover image, even if the actual path won't ever change in hyprlock
 	fi
 	;;
