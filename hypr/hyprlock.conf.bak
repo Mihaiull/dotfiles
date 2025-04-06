@@ -66,26 +66,16 @@ label {
     valign = center
 }
 
-#LOCATION & WEATHER
+LOCATION & WEATHER
 label {
     monitor =
-    text = cmd[update:1000] echo "$(bash ~/.config/hypr/bin/weather_location.sh --location)"
+    text = cmd[update:1000] echo "$(bash ~/.config/hypr/bin/location.sh) $(bash ~/.config/hypr/bin/weather.sh)"
     color = rgba(255, 255, 255, 1)
     font_size = 10
     font_family = JetBrains Mono Nerd Font Mono ExtraBold
-    position = 50, 995
-    halign = left
-    valign = left
-}
-label {
-    monitor =
-    text = cmd[update:1000] echo "$(bash ~/.config/hypr/bin/weather_location.sh --weather)"
-    color = rgba(255, 255, 255, 1)
-    font_size = 10
-    font_family = JetBrains Mono Nerd Font Mono ExtraBold
-    position = -50, 995
-    halign = right
-    valign = right
+    position = 0, 465
+    halign = center
+    valign = center
 }
 
 
