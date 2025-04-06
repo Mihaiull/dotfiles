@@ -3,6 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="zeditor"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -71,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git dirhistory git-extras fzf thefuck colored-man-pages zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # Things to run after right after starting
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github_key
-
 clear
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -107,11 +107,21 @@ clear
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias la="ls -a"
-alias ll='ls -l'
-alias lla='ls -la'
+# alias la='ls -a'
+# alias ll='ls -l'
+# alias lla='ls -la'
 alias code='code ./'
 alias vim='nvim'
 alias vi='nvim'
 alias grep='grep --color=auto'
+alias mail='mailx'
+alias ls="exa -al --color=always --group-directories-first --no-time"
+alias la="exa -a --color=always --group-directories-first --no-time"
+alias ll="exa -l --color=always --group-directories-first --no-time"
+alias lt="exa -aT --color=always --group-directories-first --no-time"
+# alias matlab='cd ~/Documents/programming/matlab && matlab'
+alias cat='bat'
+alias tree='exa -T --color=always --group-directories-first --no-time'
+alias getmytmux='tmuxinator start default'
 
+eval $(thefuck --alias)
